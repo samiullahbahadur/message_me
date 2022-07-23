@@ -33,10 +33,12 @@
               Acount
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+            <% if @current_user %>
+            <%= button_to "Sign out" , logout_path, method: :delete ,  class:"dropdown-item" %>
+           <% else %>
             <%= link_to "Login", login_path, class:"dropdown-item" %>
-           
-            <%= link_to "Sign out", logout_path, method: :delete,  class:"dropdown-item" %>
-             
+              <% end %>
              
             </ul>
             </li>
